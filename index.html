@@ -1,0 +1,519 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+        <meta name="description" content="" />
+        <meta name="author" content="" />
+        <title>About me</title>
+        <!-- Favicon-->
+        <link rel="icon" type="image/x-icon" href="assets/img/favicon1.ico" />
+        <!-- Font Awesome icons (free version)-->
+        <script src="https://use.fontawesome.com/releases/v5.15.1/js/all.js" crossorigin="anonymous"></script>
+        <!-- Google fonts-->
+        <link href="https://fonts.googleapis.com/css?family=Merriweather+Sans:400,700" rel="stylesheet" />
+        <link href="https://fonts.googleapis.com/css?family=Merriweather:400,300,300italic,400italic,700,700italic" rel="stylesheet" type="text/css" />
+        <!-- Third party plugin CSS-->
+        <link href="https://cdnjs.cloudflare.com/ajax/libs/magnific-popup.js/1.1.0/magnific-popup.min.css" rel="stylesheet" />
+        <!-- Core theme CSS (includes Bootstrap)-->
+        <link href="css/styles.css" rel="stylesheet" />
+        <link href="css/calc.css" rel="stylesheet">
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Palette+Mosaic&display=swap" rel="stylesheet">
+
+    <style>
+        #hoverH1{
+            font-size: 200%;
+            text-align: center;
+            cursor: progress;
+        }
+        #hoverclick{
+            display: none;
+            font-family:'Palette Mosaic', cursive;
+        font-size: 20px;
+        background-color: magenta;
+        padding: 20px;
+        }
+        #hoverp{
+            font-family:'Palette Mosaic', cursive;
+            font-size: 23px;
+            color: blue;
+            text-align: center;
+ }
+ #hoverp:hover p{ display: block; }
+ a.one:hover{ color: aqua; }
+ a.two:hover{color:blueviolet;}
+ a.three:hover{ color: crimson;}
+    </style>
+        <style>
+            h1{
+                float: left;
+                text-align: center;
+                font-size: 40px;
+            }
+            .slides{
+                width: 200px;
+                height: auto;
+                overflow:hidden;
+                float: left;
+                
+            }
+            .slides img{
+                position: absolute;
+                animation: slides 20s infinite;
+                opacity: 0;
+                width: 150px;
+                height: auto;
+                border: 2px solid blue;
+            }
+            @keyframes slides {
+                25% {opacity: 1;}
+                40% {opacity: 0;}
+            }
+    
+            .slides img:nth-child(1){ animation-delay:0s;}
+            .slides img:nth-child(2){ animation-delay:5s;}
+            .slides img:nth-child(3){ animation-delay:10s;}
+        </style>
+        <script>
+            function disp(){
+             //alert("hello");
+             var hh=new Date().getHours();
+             var mm=new Date().getMinutes();
+             var ss=new Date().getSeconds();
+             if (hh<10)
+            { hh='0'+hh;}
+            if (mm<10)
+            { mm='0'+mm;}
+            if (ss<10)
+            { ss='0'+ss;}
+            //  alert(hh + " : " + mm + " : " + ss)
+            document.getElementById("para").innerHTML=hh + " : " + mm + " : " + ss;
+            ref()
+        }
+        function ref()
+        {
+            var r=1000; //refresh status 1000 ms
+            myt=setTimeout('disp()',r);
+        }
+        </script>
+        <script>
+            function check()
+        {
+            var g=Math.floor(Math.random()*11);
+            var num=document.getElementById("guess").value;
+            if(g==num)
+            {
+                alert('you got the right answer')
+            }
+            else
+            {
+                 alert("Sorry! the number you guessed is not equal to the number the computer guessed")
+            }
+        }
+            function mult()
+            {   var s="";
+                var n=document.getElementById("t1").value;
+                for(var a=1; a<=10; a++)
+                {
+                    var p=n*a;
+                    s+=n + " x " + a + " = " + p + "<br>";
+                }
+                document.getElementById("pa").innerHTML=s;
+            }
+            
+        function colorGen()
+        {
+            var r=Math.floor(Math.random()*256);
+            var g=Math.floor(Math.random()*256);
+            var b=Math.floor(Math.random()*256);
+            document.getElementById("color1").style.backgroundColor="rgb("+r+","+g+","+b+")";
+            var r1 =Math.floor(Math.random()*256);
+            var g1 =Math.floor(Math.random()*256);
+            var b1 =Math.floor(Math.random()*256);
+            document.getElementById("btn").style.backgroundColor="rgb("+r1+","+g1+","+b1+")";
+        }
+        
+        function sumN()
+        {   var z=0;
+            var n=document.getElementById("add1").value;
+            for(var e=1; e<=n; e++)
+            {
+                z=z+e;
+            }
+            document.getElementById("para").innerHTML="The sum of first "+ n + " numbers = " + z;
+        }
+        function smiley()
+        {
+            
+            var can1=document.getElementById('can1');
+            var b=can1.getContext('2d');
+            b.arc(150,150,100,0,2*Math.PI);
+        b.fillStyle="Yellow"
+        b.fill();
+            b.stroke()
+            
+            b.beginPath();
+            b.arc(120, 130 ,10, 0, 2*Math.PI);
+            b.stroke();
+           
+            b.beginPath();
+            b.arc(180, 130 ,10, 0, 2*Math.PI);
+            b.stroke();
+
+            b.beginPath();
+            b.arc(150, 170, 20, 0, 1*Math.PI);
+            b.stroke();
+        }
+    </script>
+    
+    </head>
+    <body id="page-top" onload="ref()" >
+        <!-- Navigation-->
+        <nav class="navbar navbar-expand-lg navbar-light fixed-top py-3" id="mainNav">
+            <p id="para" style="color: white;"></p>
+            <div class="container">
+                <a class="navbar-brand js-scroll-trigger" href="#page-top">Reyansh Siotia</a>
+                <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation"><span class="navbar-toggler-icon"></span></button>
+                <div class="collapse navbar-collapse" id="navbarResponsive">
+                    <ul class="navbar-nav ml-auto my-2 my-lg-0">
+                        <li class="nav-item"><a class="nav-link js-scroll-trigger" href="#about">About</a></li>
+                        <li class="nav-item"><a class="nav-link js-scroll-trigger" href="#hobbies">Hobbies</a></li>
+                        <li class="nav-item"><a class="nav-link js-scroll-trigger" href="#portfolio">Portfolio</a></li>
+                        <li class="nav-item"><a class="nav-link js-scroll-trigger" href="#Javascript">JavaScript</a></li>
+                        <li class="nav-item"><a class="nav-link js-scroll-trigger" href="#contact">Contact</a></li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+        <!-- Masthead-->
+        <header class="masthead">
+            <div class="container h-100">
+                <div class="row h-100 align-items-center justify-content-center text-center">
+                    <div class="col-lg-10 align-self-end">
+                        <h1 class="text-uppercase text-white font-weight-bold">Here is my portfolio website</h1>
+                        <hr class="divider my-4" />
+                    </div>
+                    <div class="col-lg-8 align-self-baseline">
+                        <p class="text-white-75 font-weight-light mb-5">Hello, I am Reyansh Siotia, here is a little about me. I am young 5th grade web develepor/coder. </p>
+                        <a class="btn btn-primary btn-xl js-scroll-trigger" href="#about">Find Out More</a>
+                    </div>
+                </div>
+            </div>
+        </header>
+        <!-- About-->
+        <section class="page-section bg-primary" id="about">
+            <div class="container">
+                <div class="row justify-content-center">
+                    <div class="col-lg-8 text-center">
+                        <h2 class="text-white mt-0">Reyansh</h2>
+                        <hr class="divider light my-4" />
+                        <p class="text-white-50 mb-4" style="color: black;">I am Reyansh Siotia. My birthday is April 28th 2010. I am studying web development. I am in 5th grade and live in Seattle, Washington. I am In Mr.Kettners class. I know block coding and I am learning typing coding. My intrests are Football, basketball, and fornite. Football is a rough sport with a lot of tackling and injuries Basketball is also a fun sport to play Fortnite is a fun video game which you can play Here are some cool facts about me
+                            What you do speaks louder than what you say-Reyansh siotia 2021!</p>
+                        <a class="btn btn-light btn-xl js-scroll-trigger" href="#hobbies">Get Started!</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- hobbies-->
+        <section class="page-section" id="hobbies">
+            <div class="container">
+                <h2 class="text-center mt-0">My hobbies</h2>
+                <hr class="divider my-4" />
+                <div class="row">
+                    <div class="col-lg-3 col-md-6 text-center">
+                        <div class="mt-5">
+                            <i class="fas fa-4x fa-gem text-primary mb-4"></i>
+                            <h3 class="h4 mb-2">Football</h3>
+                            <p class="text-muted mb-0">American football, referred to simply as football in the United States and Canada and also known as gridiron,[nb 1] is a team sport played by two teams of eleven players on a rectangular field with goalposts at each end. The offense, the team with possession of the oval-shaped football, attempts to advance down the field by running with the ball or passing it, while the defense, the team without possession of the ball, aims to stop the offense's advance and to take control of the ball for themselves. The offense must advance at least ten yards in four downs or plays; if they fail, they turn over the football to the defense, but if they succeed, they are given a new set of four downs to continue the drive. Points are scored primarily by advancing the ball into the opposing team's end zone for a touchdown or kicking the ball through the opponent's goalposts for a field goal. The team with the most points at the end of a game wins. American football evolved in the United States, originating from the sports of soccer and rugby. The first American football match was played on November 6, 1869, between two college teams, Rutgers and Princeton, using rules based on the rules of soccer at the time. A set of rule changes drawn up from 1880 onward by Walter Camp, the "Father of American Football", established the snap, the line of scrimmage, eleven-player teams, and the concept of downs. Later rule changes legalized the forward pass, created the neutral zone and specified the size and shape of the football. The sport is closely related to Canadian football, which evolved in parallel with and at the same time as the American game (although their rules were developed independently from those of Camp). Most of the features that distinguish American football from rugby and soccer are also present in Canadian football. The two sports are considered the primary variants of gridiron football. American football is the most popular sport in the United States. The most popular forms of the game are professional and college football, with the other major levels being high school and youth football. As of 2012, nearly 1.1 million high school athletes and 70,000 college athletes play the sport in the United States annually. The National Football League, the most popular American football league, has the highest average attendance of any professional sports league in the world. Its championship game, the Super Bowl, ranks among the most-watched club sporting events in the world. The league has an annual revenue of around US$15 billion, making it the most valuable sports league in the world. Other professional leagues exist worldwide, but the sport does not have the international popularity of other American sports like baseball or basketball.</p>
+                        </div>
+                    </div>
+                    <div class="col-lg-3 col-md-6 text-center">
+                        <div class="mt-5">
+                            <i class="fas fa-4x fa-laptop-code text-primary mb-4"></i>
+                            <h3 class="h4 mb-2">Baskteball</h3>
+                            <p class="text-muted mb-0">Basketball, colloquially referred to as hoops,[1] is a team sport in which two teams, most commonly of five players each, opposing one another on a rectangular court, compete with the primary objective of shooting a basketball (approximately 9.4 inches (24 cm) in diameter) through the defender's hoop (a basket 18 inches (46 cm) in diameter mounted 10 feet (3.048 m) high to a backboard at each end of the court) while preventing the opposing team from shooting through their own hoop. A field goal is worth two points, unless made from behind the three-point line, when it is worth three. After a foul, timed play stops and the player fouled or designated to shoot a technical foul is given one, two or three one-point free throws. The team with the most points at the end of the game wins, but if regulation play expires with the score tied, an additional period of play (overtime) is mandated. Players advance the ball by bouncing it while walking or running (dribbling) or by passing it to a teammate, both of which require considerable skill. On offense, players may use a variety of shots—the lay-up, the jump shot, or a dunk; on defense, they may steal the ball from a dribbler, intercept passes, or block shots; either offense or defense may collect a rebound, that is, a missed shot that bounces from rim or backboard. It is a violation to lift or drag one's pivot foot without dribbling the ball, to carry it, or to hold the ball with both hands then resume dribbling. The five players on each side fall into five playing positions. The tallest player is usually the center, the second-tallest and strongest is the power forward, a slightly shorter but more agile player is the small forward, and the shortest players or the best ball handlers are the shooting guard and the point guard, who implements the coach's game plan by managing the execution of offensive and defensive plays (player positioning). Informally, players may play three-on-three, two-on-two, and one-on-one. Invented in 1891 by Canadian-American gym teacher James Naismith in Springfield, Massachusetts, United States, basketball has evolved to become one of the world's most popular and widely viewed sports.[2] The National Basketball Association (NBA) is the most significant professional basketball league in the world in terms of popularity, salaries, talent, and level of competition.[3][4] Outside North America, the top clubs from national leagues qualify to continental championships such as the EuroLeague and the Basketball Champions League Americas. The FIBA Basketball World Cup and Men's Olympic Basketball Tournament are the major international events of the sport and attract top national teams from around the world. Each continent hosts regional competitions for national teams, like EuroBasket and FIBA AmeriCup.</p>
+                        </div>
+                    </div>
+                    <div class="col-lg-3 col-md-6 text-center">
+                        <div class="mt-5">
+                            <i class="fas fa-4x fa-globe text-primary mb-4"></i>
+                            <h3 class="h4 mb-2">Fortnite</h3>
+                            <p class="text-muted mb-0">Fortnite is an online video game developed by Epic Games and released in 2017. It is available in three distinct game mode versions that otherwise share the same general gameplay and game engine: Fortnite: Save the World, a cooperative hybrid-tower defense-shooter-survival game for up to four players to fight off zombie-like creatures and defend objects with traps and fortifications they can build; Fortnite Battle Royale, a free-to-play battle royale game in which up to 100 players fight to be the last person standing; and Fortnite Creative, in which players are given complete freedom to create worlds and battle arenas. Save the World and Battle Royale were released in 2017 as early access titles, while Creative was released on December 6, 2018. Save the World is available only for Windows, macOS, PlayStation 4, and Xbox One, while Battle Royale and Creative released for all those platforms, and also for Nintendo Switch, iOS, and Android devices. The game is expected to also launch with the release of the next-generation PlayStation 5 and Xbox Series X/S consoles.</p>
+                        </div>
+                    </div>
+                    <div class="col-lg-3 col-md-6 text-center">
+                        <div class="mt-5">
+                            <i class="fas fa-4x fa-heart text-primary mb-4"></i>
+                            <h3 class="h4 mb-2">Chess</h3>
+                            <p class="text-muted mb-0"></p>Chess is a recreational and competitive board game played between two players. It is sometimes called Western or international chess to distinguish it from related games such as xiangqi. The current form of the game emerged in Southern Europe during the second half of the 15th century after evolving from similar, much older games of Indian and Persian origin. Today, chess is one of the world's most popular games, played by millions of people worldwide at home, in clubs, online, by correspondence, and in tournaments. Chess is an abstract strategy game and involves no hidden information. It is played on a square chessboard with 64 squares arranged in an eight-by-eight grid. At the start, each player (one controlling the white pieces, the other controlling the black pieces) controls sixteen pieces: one king, one queen, two rooks, two knights, two bishops, and eight pawns. The object of the game is to checkmate the opponent's king, whereby the king is under immediate attack (in "check") and there is no way to remove it from attack on the next move. There are also several ways a game can end in a draw. Organized chess arose in the 19th century. Chess competition today is governed internationally by FIDE (International Chess Federation). The first universally recognized World Chess Champion, Wilhelm Steinitz, claimed his title in 1886; Magnus Carlsen is the current World Champion. A huge body of chess theory has developed since the game's inception. Aspects of art are found in chess composition; and chess in its turn influenced Western culture and art and has connections with other fields such as mathematics, computer science, and psychology. One of the goals of early computer scientists was to create a chess-playing machine. In 1997, Deep Blue became the first computer to beat the reigning World Champion in a match when it defeated Garry Kasparov. Today's chess engines are significantly stronger than even the best human players, and have deeply influenced the development of chess theory.
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- Portfolio-->
+        <div id="portfolio">
+            <div class="container-fluid p-0">
+                <div class="row no-gutters">
+                    <div class="col-lg-4 col-sm-6">
+                        <a class="portfolio-box" href="assets/img/portfolio/fullsize/1.jpg">
+                            <img class="img-fluid" src="assets/img/portfolio/thumbnails/fortnite-new-season.jpg"alt="" style="height:350px" />
+                            <div class="portfolio-box-caption">
+                                <div class="project-category text-white-50">Category</div>
+                                <div class="project-name">Fortnite</div>
+                            </div>
+                        </a>
+                    </div>
+                    <div class="col-lg-4 col-sm-6">
+                        <a class="portfolio-box" href="assets/img/portfolio/fullsize/2.jpg">
+                            <img class="img-fluid" src="assets/img/portfolio/thumbnails/092516-NFL-Seattle-Seahawks-Doug-Baldwin-1.jpg" alt=""style="height:350px" />
+                            <div class="portfolio-box-caption">
+                                <div class="project-category text-white-50">Category</div>
+                                <div class="project-name">Football</div>
+                            </div>
+                        </a>
+                    </div>
+                    <div class="col-lg-4 col-sm-6">
+                        <a class="portfolio-box" href="assets/img/portfolio/fullsize/3.jpg">
+                            <img class="img-fluid" src="assets/img/portfolio/thumbnails/Baskteball1!.jpg" alt=" " style="height:350px"/>
+                            <div class="portfolio-box-caption">
+                                <div class="project-category text-white-50">Category</div>
+                                <div class="project-name">Basketball</div>
+                            </div>
+                        </a>
+                    </div>
+                    <div class="col-lg-4 col-sm-6">
+                        <a class="portfolio-box" href="assets/img/portfolio/fullsize/4.jpg">
+                          <center>  <img class="img-fluid" src="assets/img/portfolio/thumbnails/Chessdone.jpg" alt=" " style="height:350px"/></center>
+                            <div class="portfolio-box-caption">
+                                <div class="project-category text-white-50">Category</div>
+                                <div class="project-name">Chess</div>
+                            </div>
+                        </a>
+                    </div>
+                    <div class="col-lg-4 col-sm-6">
+                        <a class="portfolio-box" href="assets/img/portfolio/fullsize/5.jpg">
+                            <img class="img-fluid" src="assets/img/portfolio/thumbnails/Fortnite1.jpg" alt=" " style="height:350px" />
+                            <div class="portfolio-box-caption">
+                                <div class="project-category text-white-50">Category</div>
+                                <div class="project-name">Fortnite</div>
+                            </div>
+                        </a>
+                    </div>
+                    <div class="col-lg-4 col-sm-6">
+                        <a class="portfolio-box" href="assets/img/portfolio/fullsize/6.jpg">
+                          <center> <img class="img-fluid" src="assets/img/portfolio/thumbnails/Russel.jpg" alt=" " style="height:350px" /></center>
+                            <div class="portfolio-box-caption p-3">
+                                <div class="project-category text-white-50">Category</div>
+                                <div class="project-name">Football</div>
+                            </div>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- JavaScript Projects-->
+        <section class="page-section" id="Javascript" >
+            <div class="container"  id="color1">
+                <h2 class="text-center mt-0">My JavaScript Projects</h2>
+                <hr class="divider my-4" />
+                <div class="row">
+                    <div class="col-lg-3 col-md-6 text-center">
+                        <div class="mt-5">
+                            <i class="fas fa-4x fa-gem text-primary mb-4"></i>
+                            <h3 class="h4 mb-2">Calculator</h3>
+                            <p class="text-muted mb-0"> 
+                                <!-- Calculator -->
+                                <form name="calc">
+                                    <table>
+                                        <tr>
+                                            <td colspan="4"> <input type="text" name="display" > </td>
+                                        </tr>
+                                        
+                                        <tr>
+                                            <td> <input type="button" name="b1" value="1" onclick="calc.display.value+='1'"
+                                            </td>
+                                            <td> <input type="button" name="b2" value="2" onclick="calc.display.value+='2'"
+                                            </td>
+                                            <td> <input type="button" name="b3" value="3" onclick="calc.display.value+='3'"
+                                            </td>
+                                            <td> <input type="button" name="Add" value="+" onclick="calc.display.value+='+'"
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td> <input type="button" name="b4" value="4" onclick="calc.display.value+='4'"
+                                            </td>
+                                            <td> <input type="button" name="b5" value="5" onclick="calc.display.value+='5'"
+                                            </td>
+                                            <td> <input type="button" name="b6" value="6" onclick="calc.display.value+='6'"
+                                            </td>
+                                            <td> <input type="button" name="sub" value="-" onclick="calc.display.value+='-'"
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td> <input type="button" name="b7" value="7" onclick="calc.display.value+='7'"
+                                            </td>
+                                            <td> <input type="button" name="b8" value="8" onclick="calc.display.value+='8'"
+                                            </td>
+                                            <td> <input type="button" name="b9" value="9" onclick="calc.display.value+='9'"
+                                            </td>
+                                            <td> <input type="button" name="mul" value="*" onclick="calc.display.value+='*'"
+                                                </td>
+                                        </tr>
+                                        <tr>
+                                            <td> <input type="button" name="Clear" value="C" onclick="calc.display.value=''"
+                                            </td>
+                                            <td> <input type="button" name="b0" value="0" onclick="calc.display.value+='0'"
+                                            </td>
+                                            <td> <input type="button" name="Equal" value="=" onclick="calc.display.value=eval(calc.display.value)">
+                                            </td>
+                                            <td> <input type="button" name="Div" value="/" onclick="calc.display.value+='/'"
+                                            </td>
+                                        </tr>
+                                    </form>
+                                </table>
+                            </p>
+                        </div>
+                    </div>
+                    <div class="col-lg-3 col-md-6 text-center">
+                        <div class="mt-5">
+                            <i class="fas fa-4x fa-laptop-code text-primary mb-4"></i>
+                            <h3 class="h4 mb-2">Multiplication Table</h3>
+                            <p class="text-muted mb-0">
+                                <!-- Multiplication table -->
+                                <!-- <h1>Multiplication Table</h1> -->
+                                <label for="t1">Enter any number for Multiplication table:</label>
+                                <input type="text" id="t1"> <br><br>
+                                <input type="button" value="Click Me!" onclick="mult()">
+                                <p id="pa" style="font-size: larger; background-color: grey;">
+
+                                </p>
+                                
+                            </p>
+                        </div>
+                    </div>
+                    <div class="col-lg-3 col-md-6 text-center">
+                        <div class="mt-5">
+                            <i class="fas fa-4x fa-globe text-primary mb-4"></i>
+                            <h3 class="h4 mb-2">Change the background color randomly</h3>
+                            <p class="text-muted mb-0">
+                                <button  id="btn" onclick="colorGen()" style="font-size:30px;">Click me!</button></p>
+                        </div>
+                    </div>
+                    <div class="col-lg-3 col-md-6 text-center">
+                        <div class="mt-5">
+                            <i class="fas fa-4x fa-heart text-primary mb-4"></i>
+                            <h3 class="h4 mb-2">Sum on n numbers</h3>
+                            <p class="text-muted mb-0"></p>
+                            <label for="t1" style="font-size: 30px;">
+                            <input type="text" id="add1"> <br><br>
+                            <input type="button" value="Click Me!" onclick="sumN()">
+                            <p id="para3">
+                        
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-lg-3 col-md-6 text-center">
+                        <div class="mt-5">
+                            <i class="fas fa-4x fa-gem text-primary mb-4"></i>
+                            <h3 class="h4 mb-2">Guess the number</h3>
+                            <p class="text-muted mb-0"> 
+                                <!-- Guess the number -->
+                                <label for="guess"> Enter the Number</label>
+                                <input type="text" id="guess">
+                                <input type="button" value="Click" onclick="check()">
+                                
+                            </p>
+                        </div>
+                    </div>
+                    <div class="col-lg-3 col-md-6 text-center">
+                        <div class="mt-5">
+                            <i class="fas fa-4x fa-laptop-code text-primary mb-4"></i>
+                            <h3 class="h4 mb-2">Slideshow</h3>
+                            <p class="text-muted mb-0">
+                                <!-- Slideshow -->
+                                <div class="slides">
+                                    <img src="C:\Users\reyan\OneDrive\Web dev\JavaScript\greenapple.jpg" alt="">
+                                    <img src="C:\Users\reyan\OneDrive\Web dev\JavaScript\Apple.jpg" alt="">
+                                    <img src="C:\Users\reyan\OneDrive\Web dev\JavaScript\Red apple.jpg" alt="">
+                            
+                                </div>
+                            </p>
+                        </div>
+                    </div>
+                    <div class="col-lg-3 col-md-6 text-center">
+                        <div class="mt-5">
+                            <i class="fas fa-4x fa-globe text-primary mb-4"></i>
+                            <h3 class="h4 mb-2">Smiley</h3>
+                            <p class="text-muted mb-0">
+                                <Canvas id="can1" height="300" width="400" >
+                                </Canvas> <br>
+                                <button  id="btn" onclick="smiley()" style="font-size:30px;">Click me!</button></p>
+                        </div>
+                    </div>
+                    <div class="col-lg-3 col-md-6 text-center">
+                        <div class="mt-5">
+                            <i class="fas fa-4x fa-heart text-primary mb-4"></i>
+                            <h3 class="h4 mb-2">Suprise activity</h3>
+                            <p class="text-muted mb-0"></p>
+                            <h1 id="hoverH1">
+                                <a class="one" >Suprise!</a> <br>
+                                <a class="two">Suprise!!</a> <br>
+                                <a class="three">Suprise!!!</a> <br>
+                            </h1>
+                        <Div id="hoverp">
+                            You have a suprise locked here.... <br>
+                            Hover over me to unlock your suprises
+                            <p id="hoverclick">
+                                Tada! <br>
+                                Hi happy BIRTHDAY <br>
+                                Have a great day!
+                            </P>
+                        </Div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+        <!-- Contact-->
+        <section class="page-section" id="contact">
+            <div class="container">
+                <div class="row justify-content-center">
+                    <div class="col-lg-8 text-center">
+                        <h2 class="mt-0">Let's Get In Touch!</h2>
+                        <hr class="divider my-4" />
+                        <p class="text-muted mb-5">Contact me if you have any questions about me, I would love to answer.</p>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-lg-4 ml-auto text-center mb-5 mb-lg-0">
+                        <i class="fas fa-phone fa-3x mb-3 text-muted"></i>
+                        <div></div>
+                    </div>
+                    <div class="col-lg-4 mr-auto text-center">
+                        <i class="fas fa-envelope fa-3x mb-3 text-muted"></i>
+                        <!-- Make sure to change the email address in BOTH the anchor text and the link target below!-->
+                        <a class="d-block" href="mailto:reyansh.siotia@hotmail.com">reyansh.siotia@hotmail.com</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- Footer-->
+        <footer class="bg-light py-5">
+            <div class="container"><div class="small text-center text-muted">Copyright © 2020 - Start Bootstrap</div></div>
+        </footer>
+        <!-- Bootstrap core JS-->
+        <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.bundle.min.js"></script>
+        <!-- Third party plugin JS-->
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-easing/1.4.1/jquery.easing.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/magnific-popup.js/1.1.0/jquery.magnific-popup.min.js"></script>
+        <!-- Core theme JS-->
+        <script src="js/scripts.js"></script>
+    </body>
+</html>
